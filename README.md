@@ -1,5 +1,5 @@
 <h1 align="center">🏥 Gestor de Citas Médicas</h1>
-<p align="center"><em>Proyecto completo con Flask y MySQL</em></p>
+<p align="center"><em>Proyecto completo con Flask y MySQL🩺</em></p>
 
 <p align="center">
   <img src="https://img.shields.io/badge/Python-3.10-blue?logo=python"/>
@@ -32,7 +32,7 @@ El proyecto fue desarrollado utilizando las siguientes herramientas y tecnologí
 | 💻 Categoría | 🧩 Tecnologías |
 |--------------|----------------|
 | **Backend** | 🐍 Flask (Python), 🗄️ MySQL |
-| **Frontend** | 🎨 HTML5, CSS3, 💠 Bootstrap 5 |
+| **Frontend** | 🎨 HTML5, CSS3, 💠 Bootstrap 5, ⚡ Font Awesome |
 | **Servidor local** | ⚙️ XAMPP |
 | **Control de versiones** | 🌿 Git & 🐙 GitHub |
 | **Entorno de desarrollo** | 🧠 Visual Studio Code |
@@ -41,8 +41,6 @@ El proyecto fue desarrollado utilizando las siguientes herramientas y tecnologí
 ---
 
 ## 🗂️ Estructura del proyecto
-
-<div align="left">
 
 ```bash
 proyecto_estrella/
@@ -64,7 +62,7 @@ proyecto_estrella/
 │
 └── README.md # 📘 Documentación principal del proyecto
 ```
-</div>
+
 
 ---
 
@@ -157,7 +155,7 @@ A continuación se muestran algunas capturas de pantalla de la aplicación en fu
 
 ## 🚀 Próximas Mejoras
 
-Estas son algunas funcionalidades y mejoras que se planean implementar en futuras versiones de la aplicación:
+💡 Estas son algunas funcionalidades planeadas para próximas versiones:
 
 - [ ] 📧 Integrar sistema de **notificaciones por correo** para recordatorios de citas  
 - [ ] 📱 Mejorar la **experiencia móvil** con diseño responsive  
