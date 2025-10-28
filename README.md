@@ -1,120 +1,185 @@
-# 🏥 Gestor de Citas Médicas
+<h1 align="center">🏥 Gestor de Citas Médicas</h1>
+<p align="center"><em>Proyecto completo con Flask y MySQL</em></p>
 
-Aplicación web desarrollada con **Flask** y **MySQL** que permite registrar, editar, eliminar y consultar pacientes en un entorno médico.  
-Su objetivo es brindar una interfaz sencilla y eficiente para la administración de citas y control básico de pacientes.
-
----
-
-## 🚀 Características principales
-
-✅ Registro de pacientes con validación de datos  
-✅ Edición y eliminación de registros  
-✅ Prevención de duplicados por documento  
-✅ Integración con base de datos **MySQL**  
-✅ Interfaz moderna con **Bootstrap** y alertas visuales  
-✅ Gestión completa desde navegador local
+<p align="center">
+  <img src="https://img.shields.io/badge/Python-3.10-blue?logo=python"/>
+  <img src="https://img.shields.io/badge/Flask-Framework-lightgrey?logo=flask"/>
+  <img src="https://img.shields.io/badge/MySQL-Database-blue?logo=mysql"/>
+  <img src="https://img.shields.io/badge/Bootstrap-5-purple?logo=bootstrap"/>
+  <img src="https://img.shields.io/badge/Proyecto–Completado-success"/>
+</p>
 
 ---
 
-## 🧠 Tecnologías utilizadas
+## 🩺 Descripción del Proyecto
 
-- **Python 3**
-- **Flask**
-- **MySQL**
-- **Bootstrap 5**
-- **HTML5 / CSS3 / Jinja2**
+El **Gestor de Citas Médicas** es una aplicación web desarrollada con **Flask** y **MySQL**, que permite administrar pacientes, especialistas, especialidades y citas médicas de forma intuitiva.  
+
+Su objetivo es brindar una solución práctica para pequeños consultorios o centros médicos que deseen optimizar la gestión de citas, manteniendo una interfaz simple y funcional.
+
+Entre sus principales características se incluyen:
+- Registro, edición y eliminación de pacientes y especialistas.  
+- Programación, modificación y cancelación de citas médicas.  
+- Asociación de citas con pacientes y especialidades.  
+- Panel de control con notificaciones y mensajes de confirmación.  
+- Interfaz moderna construida con **Bootstrap 5**.
+
+---
+## ⚙️ Tecnologías Utilizadas
+
+El proyecto fue desarrollado utilizando las siguientes herramientas y tecnologías:
+
+| 💻 Categoría | 🧩 Tecnologías |
+|--------------|----------------|
+| **Backend** | 🐍 Flask (Python), 🗄️ MySQL |
+| **Frontend** | 🎨 HTML5, CSS3, 💠 Bootstrap 5 |
+| **Servidor local** | ⚙️ XAMPP |
+| **Control de versiones** | 🌿 Git & 🐙 GitHub |
+| **Entorno de desarrollo** | 🧠 Visual Studio Code |
+| **Base de datos** | 🧾 MySQL Workbench |
 
 ---
 
-## ⚙️ Instalación y ejecución
+## 🗂️ Estructura del proyecto
 
-1. Clona este repositorio:
-   ```bash
-   git clone https://github.com/iparra-sys/gestor-citas-medicas.git
-2. Ingresa al directorio:
-cd gestor-citas-medicas
-3.Crea un entorno virtual y actívalo:
+<div align="left">
+
+```bash
+proyecto_estrella/
+│
+├── app.py # 🧠 Archivo principal de la aplicación Flask
+├── requirements.txt # 📦 Dependencias del proyecto
+│
+├── static/ # 🎨 Archivos estáticos (CSS, JS, imágenes)
+│ ├── css/
+│ ├── js/
+│ └── img/
+│
+├── templates/ # 🧩 Plantillas HTML (vistas del sistema)
+│ ├── index.html
+│ ├── pacientes.html
+│ ├── citas.html
+│ ├── editar_paciente.html
+│ └── editar_cita.html
+│
+└── README.md # 📘 Documentación principal del proyecto
+```
+</div>
+
+---
+
+## 🚀 Instalación y Ejecución
+
+Sigue estos pasos para clonar y ejecutar el proyecto en tu entorno local:
+
+### 1️⃣ Clonar el repositorio
+```bash
+git clone https://github.com/iparra-sys/proyecto_estrella.git
+cd proyecto_estrella
+```
+2️⃣ Crear y activar un entorno virtual
+En Windows:
+```bash
 python -m venv venv
 venv\Scripts\activate
-4.Instala las dependencias:
+```
+En Linux / macOS:
+```bash
+python3 -m venv venv
+source venv/bin/activate
+```
+3️⃣ Instalar dependencias
+```bash
 pip install -r requirements.txt
-5.Configura tu base de datos MySQL y ajusta los datos de conexión en app.py:
+```
+4️⃣ Configurar la base de datos
+Asegúrate de tener un servidor MySQL en ejecución y crea una base de datos llamada:
+```
+CREATE DATABASE gestion_citas;
+```
+Luego, actualiza las credenciales en el archivo app.py:
+```
 app.config['MYSQL_HOST'] = 'localhost'
 app.config['MYSQL_USER'] = 'root'
-app.config['MYSQL_PASSWORD'] = 'tu_contraseña'
-app.config['MYSQL_DB'] = 'gestion_pacientes'
-6.Ejecuta la aplicación:
+app.config['MYSQL_PASSWORD'] = ''
+app.config['MYSQL_DB'] = 'gestion_citas'
+```
+5️⃣ Ejecutar la aplicación
+```bash
 python app.py
-7.Abre tu navegador en:
-http://127.0.0.1:5000
+```
+La aplicación estará disponible en tu navegador en: 👉 http://127.0.0.1:5000/
 
 ----
 
+## ⚙️ Funcionalidades Principales
 
-🧩 Estructura del proyecto
+El **Sistema de Gestión de Citas Médicas** permite administrar de forma intuitiva la programación y control de pacientes, especialistas y citas médicas.
 
-gestor-citas-medicas/
-│
-├── app.py
-├── requirements.txt
-├── .gitignore
-│
-├── /templates
-│   ├── index.html
-│   ├── pacientes.html
-│   ├── editar_paciente.html
-│   └── base.html
-│
-├── /static
-│   ├── css/
-│   └── js/
-│
-└── /instance
+### 🩺 Módulos principales
+- **Gestión de Pacientes:** registro, edición, búsqueda y eliminación de pacientes.  
+- **Gestión de Especialistas:** administración del personal médico con especialidad asignada.  
+- **Gestión de Especialidades:** definición de las áreas médicas disponibles.  
+- **Gestión de Citas Médicas:** creación, actualización y seguimiento del estado de las citas (pendiente, completada o cancelada).  
 
-----
+### 💬 Notificaciones visuales
+- Sistema de alertas dinámicas con **toasts** Bootstrap para confirmar acciones o mostrar errores de validación.
 
-🌟 Capturas sugeridas
+### 🔍 Búsqueda y control
+- Listados interactivos con filtros y botones de acción para editar o eliminar registros fácilmente.
 
-Agrega imágenes del sistema en acción:
+### 🧩 Diseño modular
+- Separación de responsabilidades por rutas y plantillas HTML organizadas para mantener el código limpio y escalable.
+
+### 🖥️ Interfaz moderna y adaptable
+- Construida con **Bootstrap 5**, íconos **Font Awesome** y una estructura responsive que se adapta a cualquier dispositivo.
+
+---
+## 👀 Vista Previa de la App
+
+A continuación se muestran algunas capturas de pantalla de la aplicación en funcionamiento:
+
+### Pantalla de Inicio
+![Pantalla de Inicio](ruta/a/captura_inicio.png)
+
+### Gestión de Citas Médicas
+![Gestión de Citas](ruta/a/captura_gestion.png)
+
+### Formulario para Agendar Citas
+![Formulario de Citas](ruta/a/captura_formulario.png)
+
+### Vista de Confirmación
+![Confirmación](ruta/a/captura_confirmacion.png)
+
+💡 Las imágenes son ilustrativas y muestran la interfaz principal y las funcionalidades clave de la aplicación.
+
+---
+
+## 🚀 Próximas Mejoras
+
+Estas son algunas funcionalidades y mejoras que se planean implementar en futuras versiones de la aplicación:
+
+- [ ] 📧 Integrar sistema de **notificaciones por correo** para recordatorios de citas  
+- [ ] 📱 Mejorar la **experiencia móvil** con diseño responsive  
+- [ ] 🔍 Implementar **filtros avanzados** para búsqueda de citas y pacientes  
+- [ ] 📄 Añadir opción de **exportar reportes** en PDF o Excel  
+- [ ] 🔐 Incorporar **autenticación con redes sociales** (Google, Facebook)  
+- [ ] 📊 Agregar **historial de citas** con estadísticas y gráficas  
+- [ ] ⚡ Optimizar la **velocidad de carga** y el rendimiento de la app  
+- [ ] 🌙 Implementar **tema oscuro** para comodidad visual
 
 
+---
+## 👩‍💻 Autora
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-👩‍💻 Autora
-
-Iveth Parra Herrera
-🔗 LinkedIn
-
-📧 Desarrolladora Python en formación | Enfocada en backend y soluciones web prácticas
-
-💡 “El código es una herramienta para construir soluciones reales y dejar huella.”
+**Iveth Parra Herrera**  
+💡 *“El código es una herramienta para construir soluciones reales y dejar huella.”*  
 
 ✨ Proyecto desarrollado como parte del Portafolio 2025 - Iveth Parra Herrera ✨
 
+---
 
-🧾 Licencia
+## 📄 Licencia
 
 Este proyecto se publica con fines educativos y de portafolio.
 Eres libre de revisarlo, mejorarlo o inspirarte en su estructura.
