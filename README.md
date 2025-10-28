@@ -135,21 +135,37 @@ El **Sistema de Gestión de Citas Médicas** permite administrar de forma intuit
 ---
 ## 👀 Vista Previa de la App
 
-A continuación se muestran algunas capturas de pantalla de la aplicación en funcionamiento:
+A continuación se muestran algunas capturas de pantalla del sistema en funcionamiento:
 
-### Pantalla de Inicio
-![Pantalla de Inicio](ruta/a/captura_inicio.png)
+### 🔐 Pantalla de Login
+![Pantalla de Login](static/Login.png)
 
-### Gestión de Citas Médicas
-![Gestión de Citas](ruta/a/captura_gestion.png)
+### 🏠 Inicio del Sistema
+![Inicio](static/inicio.png)
 
-### Formulario para Agendar Citas
-![Formulario de Citas](ruta/a/captura_formulario.png)
+### 👨‍⚕️ Gestión de Pacientes
+![Gestión de Pacientes](static/gestion_pacientes.png)
 
-### Vista de Confirmación
-![Confirmación](ruta/a/captura_confirmacion.png)
+### 🗓️ Gestión de Citas Médicas
+![Gestión de Citas](static/gestion_citas.png)
 
-💡 Las imágenes son ilustrativas y muestran la interfaz principal y las funcionalidades clave de la aplicación.
+### ✏️ Editar Cita
+![Editar Cita](static/editar_cita.png)
+
+### 🔁 Actualizar Paciente
+![Actualizar Paciente](static/actualizar_paciente.png)
+
+### ✅ Confirmación al Actualizar
+![Confirmación Actualizar](static/confirmacion_actualizar.png)
+
+### ✅ Confirmación al Editar Cita
+![Confirmación Editar Cita](static/confirmacion_editar_cita.png)
+
+### 🚪 Cierre de Sesión
+![Logout](static/logout.png)
+
+💡 Estas imágenes muestran la interfaz del sistema y las principales funcionalidades de gestión de citas, pacientes y control de sesiones.
+
 
 ---
 
