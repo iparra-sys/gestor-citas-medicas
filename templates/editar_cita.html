@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Editar Cita Médica</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    body { background: linear-gradient(135deg,#003366,#005f91); color:#f8f9fa; font-family:'Segoe UI',sans-serif; padding:40px 0; }
+    h2 { color:#3b82f6; text-align:center; margin-bottom:30px; text-shadow:1px 1px 4px rgba(0,0,0,.3); }
+    .card { background:#111827; border:none; border-radius:15px; box-shadow:0 5px 15px rgba(0,0,0,.3); color:#e5e7eb; max-width:720px; margin:0 auto; }
+    .card-header { background:#1f2937; border-bottom:2px solid #2563eb; font-weight:600; }
+    .form-control, .form-select { background:#1e293b; border:1px solid #374151; color:#f8f9fa; }
+    .form-control:focus, .form-select:focus { border-color:#3b82f6; box-shadow:none; }
+    .btn-primary { background:#3b82f6; border:none; font-weight:600; }
+    .btn-primary:hover { background:#2563eb; }
+    .btn-secondary { background:#1f2937; border:1px solid #3b82f6; color:#3b82f6; }
+    .btn-secondary:hover { background:#3b82f6; color:white; }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h2>Editar Cita Médica</h2>
+
+    <div class="card">
+      <div class="card-header">Actualizar Información</div>
+      <div class="card-body">
+        <form method="POST" action="{{ url_for('editar_cita', id=cita['id']) }}">
+          <div class="mb-3">
+            <label class="form-label">Nombre del Paciente</label>
+            <input type="text" name="paciente" class="form-control" value="{{ cita['paciente'] }}" required>
+          </div>
+
+          <div class="mb-3">
+            <label class="form-label">Número de Documento</label>
+            <input type="text" name="documento" class="form-control" value="{{ cita['documento'] }}" required>
+          </div>
+
+          <div class="row g-3">
+            <div class="col-md-4">
+              <label class="form-label">Fecha</label>
+              <input type="date" name="fecha" class="form-control" value="{{ cita['fecha']|string }}" required>
+            </div>
+            <div class="col-md-4">
+              <label class="form-label">Hora</label>
+              <input type="time" name="hora" class="form-control" value="{{ cita['hora'] }}" required>
+            </div>
+            <div class="col-md-4">
+              <label class="form-label">Estado</label>
+              <select name="estado" class="form-select" required>
+                <option value="Pendiente" {% if cita['estado'] == 'Pendiente' %}selected{% endif %}>Pendiente</option>
+                <option value="Confirmada" {% if cita['estado'] == 'Confirmada' %}selected{% endif %}>Confirmada</option>
+                <option value="Cancelada" {% if cita['estado'] == 'Cancelada' %}selected{% endif %}>Cancelada</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="row g-3 mt-3">
+            <div class="col-md-6">
+              <label class="form-label">Especialidad</label>
+              <select name="especialidad_id" class="form-select">
+                {% for e in especialidades %}
+                  {% set eid = e.id if e is mapping else e[0] %}
+                  {% set enombre = e.nombre if e is mapping else e[1] %}
+                  <option value="{{ eid }}" {% if eid == cita['especialidad_id'] %}selected{% endif %}>{{ enombre }}</option>
+                {% endfor %}
+              </select>
+            </div>
+            <div class="col-md-6">
+              <label class="form-label">Especialista</label>
+              <select name="especialista_id" class="form-select">
+                {% for s in especialistas %}
+                  {% set sid = s.id if s is mapping else s[0] %}
+                  {% set snombre = s.nombre if s is mapping else s[1] %}
+                  <option value="{{ sid }}" {% if sid == cita['especialista_id'] %}selected{% endif %}>{{ snombre }}</option>
+                {% endfor %}
+              </select>
+            </div>
+          </div>
+
+          <div class="text-center mt-4">
+            <button type="submit" class="btn btn-primary">💾 Guardar Cambios</button>
+            <a href="{{ url_for('citas') }}" class="btn btn-secondary ms-2">⬅ Volver</a>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
